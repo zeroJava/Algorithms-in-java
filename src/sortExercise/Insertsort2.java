@@ -37,7 +37,7 @@ public class Insertsort2 {
 		}
 	}
 
-	public static void insertionSortPart22(int[] ar)
+	public static void sortiNumber2(int[] ar)
 	{
 		int index = 0;
 

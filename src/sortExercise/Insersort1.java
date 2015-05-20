@@ -1,5 +1,6 @@
 package sortExercise;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Insersort1 {
@@ -9,6 +10,7 @@ public class Insersort1 {
 		Scanner input = new Scanner(System.in);
 		int size = input.nextInt();
 		int[] array = new int[size];
+		int[] array2 = array;
 		
 		for(int index = 0; index < size; index++)
 		{
@@ -16,6 +18,13 @@ public class Insersort1 {
 		}
 		
 		insertIntoSorted(array);
+		
+		System.out.println(Arrays.toString(array));
+		
+		System.out.println("If data was scruble way.. ");
+		sortinumber1(array2);
+		System.out.println(Arrays.toString(array2));
+		
 		input.close();
 	}
 
@@ -51,6 +60,23 @@ public class Insersort1 {
 			ar[0] = usortedValue;
 		}
 		printArray(ar);
+	}
+	
+	public static void sortinumber1(int[] ar)
+	{
+		for (int index1 = 0; index1 < ar.length; index1++)
+		{
+			for (int index2 = index1 + 1; index2 < ar.length; index2++)
+			{
+				if (ar[index1] >= ar[index2])
+				{
+					int tempA = ar[index1];
+					int tempB = ar[index2];
+					ar[index1] = tempB;
+					ar[index2] = tempA;
+				}
+			}
+		}
 	}
 
 	private static void printArray(int[] ar)
