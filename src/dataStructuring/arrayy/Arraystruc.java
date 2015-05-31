@@ -101,4 +101,38 @@ public class Arraystruc {
 			}
 		}
 	}
+	
+	public void matrixMultipication(int[][] firstArray, int[][] secondArray)
+	{
+		int[][] reults = new int[firstArray.length][];
+		
+		for (int i = 0; i < reults.length; i++)
+		{
+			reults [i] = new int [secondArray [0].length];
+		}
+	           
+		for(int index = 0; index < firstArray.length; index++)
+		{
+			for(int index2 = 0; index2 < secondArray[0].length; index2++)
+			{
+				for(int index3 = 0; index3 < secondArray.length; index3++)
+				{
+					reults[index][index2] += firstArray[index][index3] * secondArray[index3][index2];
+				}
+			}
+		}
+		printer(reults);
+	}
+	
+	private void printer(int[][] array)
+	{
+		for(int i = 0; i < array.length; i++)
+		{
+			for(int j = 0; j < array[0].length; j++)
+			{
+				System.out.print(array[i][j] + " ");
+			}
+			System.out.println(" ");
+		}
+	}
 }
