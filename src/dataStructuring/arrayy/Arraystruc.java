@@ -90,7 +90,7 @@ public class Arraystruc {
 		return array;
 	}
 	
-	public void giveValue()
+	public void assignValue()
 	{
 		Random random = new Random();
 		for(int indexForRow = 0; indexForRow < twoArray2.length; indexForRow++)
@@ -99,6 +99,21 @@ public class Arraystruc {
 			{
 				twoArray2[indexForRow][indexForColumn] = random.nextInt();
 			}
+		}
+	}
+	
+	public int getValueOfIndex(int index, int[] array)
+	{
+		return array[index];
+	}
+	
+	public void printArray(int[] array)
+	{
+		for(int intValue = 0; intValue < array.length; intValue++)
+		{
+			System.out.print("| " + intValue);
+			System.out.println(" | " + array[intValue] + " | ");
+			System.out.println("--------");
 		}
 	}
 }
