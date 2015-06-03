@@ -10,13 +10,14 @@ public class FaberSomething {
 		{
 			long thidNumber = firstNumber + secondNumber;
 			System.out.println(thidNumber);
-			firstNumber = secondNumber; secondNumber = thidNumber;
+			firstNumber = secondNumber; 
+			secondNumber = thidNumber;
 		}
 	}
 	
 	public static void main(String[] args)
 	{
-		fabDoin(100);
+		fabDoin(10);
 	}
 
 }
