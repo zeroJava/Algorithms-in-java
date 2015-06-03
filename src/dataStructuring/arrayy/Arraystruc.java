@@ -41,7 +41,7 @@ public class Arraystruc {
 	public void binarySearch(int number, int[] array)
 	{
 		System.out.println(Arrays.toString(bubbleSortAr(array)));
-		System.out.println(11 ^ 12);
+		//System.out.println(11 ^ 12);
 		int[] arraySorted = bubbleSortAr(array);
 		int lowestIndex = 0, highesIndex = arraySorted.length - 1, middleIndex, searchValue = number;
 		
@@ -90,6 +90,42 @@ public class Arraystruc {
 		return array;
 	}
 	
+	public boolean doesThisElementExist(int element, int[] array)
+	{
+		for(int number : array)
+		{
+			if(element == number)
+			{
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public void deleteIndex(int element, int[] array)
+	{
+		for(int index = element; index < (array.length - 1); index++)
+		{
+			int value = array[index + 1];
+			array[index] = value;
+		}
+		
+		array[array.length - 1] = 0;
+	}
+	
+	public void insertValue(int value, int[] array)
+	{
+		for(int index = 0; index < array.length; index++)
+		{
+			if(array[index] == 0)
+			{
+				array[index] = value;
+				return;
+			}
+		}
+		System.out.println("There was no emptys space avaialable.");
+	}
+	
 	public void assignValue()
 	{
 		Random random = new Random();
@@ -115,5 +151,10 @@ public class Arraystruc {
 			System.out.println(" | " + array[intValue] + " | ");
 			System.out.println("--------");
 		}
+	}
+	
+	public int generateValuesForArray(int rangeBetween)
+	{
+		return (int)(Math.random()* rangeBetween);
 	}
 }
