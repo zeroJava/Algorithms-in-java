@@ -1,11 +1,86 @@
 package dataStructuring.stacksNqueues;
 
-public class Stackin {
+import java.util.Arrays;
 
+public class Stackin {
+	
+	/* Stacks hold data. With a stack, the data that has been added first will be retrieved last; 
+	 * and the data place last will be retrieved(deleted) first. */
+	// An example of how stack work
+	private int position = -1;
+	private int[] array; 
+	
+	public Stackin(int[] array)
+	{
+		this.array = array;
+	}
+	
+	public void fillArray(int[] array)
+	{
+		if(array.length != 0)
+		{
+			for (int index = 0; index < array.length; index++)
+			{
+				pussshhh((int) (Math.random() * 99) + 1);
+			}
+		} 
+	}
+
+	public void pussshhh(int value)
+	{
+		// .push is how you insert a value into a stack
+		if(position + 1 < array.length)
+		{
+			position++;
+			array[position] = value;
+			printAraay();
+		}
+		else
+		{
+			System.out.println("Stack is full");
+		}
+	}
+	
+	public void ppoopp()
+	{
+		if(position >= 0)
+		{
+			array[position] = 0;
+			position--;
+			printAraay();
+		}
+		else
+		{
+			System.out.println("There was no data");
+		}
+	}
+	
+	public void ppooppAll()
+	{
+		while(position != -1)
+		{
+			ppoopp();
+		}
+	}
+	
+	public int peaakab()
+	{
+		System.out.println(array[position]);
+		return array[position];
+	}
+	
+	private void printAraay()
+	{
+		System.out.println(Arrays.toString(array));
+	}
+	
 	public static void main(String[] args)
 	{
-		// TODO Auto-generated method stub
-
+		int[] array = new int[15];
+		//Arrays.fill(array, -2);
+		Stackin stackin = new Stackin(array);
+		stackin.fillArray(array);
+		stackin.ppooppAll();
 	}
 
 }
