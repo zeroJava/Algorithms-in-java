@@ -21,12 +21,12 @@ public class Stackin {
 		{
 			for (int index = 0; index < array.length; index++)
 			{
-				pussshhh((int) (Math.random() * 99) + 1);
+				pushDataIntoStack((int) (Math.random() * 99) + 1);
 			}
 		} 
 	}
 
-	public void pussshhh(int value)
+	public void pushDataIntoStack(int value)
 	{
 		// .push is how you insert a value into a stack
 		if(position + 1 < array.length)
@@ -41,7 +41,7 @@ public class Stackin {
 		}
 	}
 	
-	public void ppoopp()
+	public void popDataFromTheStack()
 	{
 		if(position >= 0)
 		{
@@ -55,15 +55,15 @@ public class Stackin {
 		}
 	}
 	
-	public void ppooppAll()
+	public void popAllDataInStack()
 	{
 		while(position != -1)
 		{
-			ppoopp();
+			popDataFromTheStack();
 		}
 	}
 	
-	public int peaakab()
+	public int peakCheakTheStack()
 	{
 		System.out.println(array[position]);
 		return array[position];
@@ -80,7 +80,7 @@ public class Stackin {
 		//Arrays.fill(array, -2);
 		Stackin stackin = new Stackin(array);
 		stackin.fillArray(array);
-		stackin.ppooppAll();
+		stackin.popAllDataInStack();
 	}
 
 }

@@ -18,14 +18,14 @@ public class Queuein {
 		this.array = array;
 	}
 	
-	public void inser(int value)
+	public void insertDataIntoQueue(int value)
 	{
 		if(number < array.length)
 		{
 			array[backPosition] = value;
 			backPosition++;
 			number++;
-			printttt(array);
+			diplayDataInQueue(array);
 		}
 		else
 		{
@@ -33,14 +33,14 @@ public class Queuein {
 		}
 	}
 	
-	public void reemovee()
+	public void removeDataFromTheQueue()
 	{
 		if(number > 0)
 		{
 			array[frontPosition] = 0;
 			frontPosition++;
 			number--;
-			printttt(array);
+			diplayDataInQueue(array);
 		}
 		else
 		{
@@ -48,18 +48,18 @@ public class Queuein {
 		}
 	}
 	
-	public void peekkk()
+	public void checkThePeakOfQueue()
 	{
 		System.out.println("first element is " + array[frontPosition]);
 	}
 	
-	public void privInser(int value)
+	public void priorityInsertDataIntoLQueue(int value)
 	{
 		int num;
 		
 		if(this.number == 0)
 		{
-			inser(value);
+			insertDataIntoQueue(value);
 		}
 		else
 		{
@@ -68,7 +68,7 @@ public class Queuein {
 				if(value > array[num])
 				{
 					array[num + 1] = array[num];
-					printttt(array);
+					diplayDataInQueue(array);
 				}
 				else
 				{
@@ -83,15 +83,15 @@ public class Queuein {
 		}
 	}
 	
-	public void giveData()
+	public void assignValueToObjects()
 	{
 		for(int index = 0; index < array.length; index++)
 		{
-			inser((int)(Math.random()*100) + 1);
+			insertDataIntoQueue((int)(Math.random()*100) + 1);
 		}
 	}
 	
-	private void printttt(int[] array)
+	private void diplayDataInQueue(int[] array)
 	{
 		System.out.println(Arrays.toString(array));
 	}
@@ -104,13 +104,13 @@ public class Queuein {
 		//queuein.giveData();
 		//queuein.reemovee();
 		//queuein.peekkk();
-		queuein.privInser(54);
-		queuein.privInser(5);
-		queuein.privInser(753);
-		queuein.privInser(404);
-		queuein.privInser(100);
-		queuein.privInser(347);
-		queuein.reemovee();
+		queuein.priorityInsertDataIntoLQueue(54);
+		queuein.priorityInsertDataIntoLQueue(5);
+		queuein.priorityInsertDataIntoLQueue(753);
+		queuein.priorityInsertDataIntoLQueue(404);
+		queuein.priorityInsertDataIntoLQueue(100);
+		queuein.priorityInsertDataIntoLQueue(347);
+		queuein.removeDataFromTheQueue();
 	}
 
 }
