@@ -21,12 +21,12 @@ public class Stackin {
 		{
 			for (int index = 0; index < array.length; index++)
 			{
-				pushDataIntoStack((int) (Math.random() * 99) + 1);
+				push((int) (Math.random() * 99) + 1);
 			}
 		} 
 	}
 
-	public void pushDataIntoStack(int value)
+	public void push(int value)
 	{
 		// .push is how you insert a value into a stack
 		if(position + 1 < array.length)
@@ -41,7 +41,7 @@ public class Stackin {
 		}
 	}
 	
-	public void popDataFromTheStack()
+	public void pop()
 	{
 		if(position >= 0)
 		{
@@ -59,7 +59,7 @@ public class Stackin {
 	{
 		while(position != -1)
 		{
-			popDataFromTheStack();
+			pop();
 		}
 	}
 	

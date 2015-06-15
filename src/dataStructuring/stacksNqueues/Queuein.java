@@ -18,7 +18,7 @@ public class Queuein {
 		this.array = array;
 	}
 	
-	public void insertDataIntoQueue(int value)
+	public void insert(int value)
 	{
 		if(number < array.length)
 		{
@@ -33,7 +33,7 @@ public class Queuein {
 		}
 	}
 	
-	public void removeDataFromTheQueue()
+	public void remove()
 	{
 		if(number > 0)
 		{
@@ -59,7 +59,7 @@ public class Queuein {
 		
 		if(this.number == 0)
 		{
-			insertDataIntoQueue(value);
+			insert(value);
 		}
 		else
 		{
@@ -87,7 +87,7 @@ public class Queuein {
 	{
 		for(int index = 0; index < array.length; index++)
 		{
-			insertDataIntoQueue((int)(Math.random()*100) + 1);
+			insert((int)(Math.random()*100) + 1);
 		}
 	}
 	
@@ -110,7 +110,7 @@ public class Queuein {
 		queuein.priorityInsertDataIntoLQueue(404);
 		queuein.priorityInsertDataIntoLQueue(100);
 		queuein.priorityInsertDataIntoLQueue(347);
-		queuein.removeDataFromTheQueue();
+		queuein.remove();
 	}
 
 }

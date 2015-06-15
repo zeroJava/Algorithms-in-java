@@ -31,6 +31,41 @@ public class GenericLinkedListt<T> {
 
 	public void deletetem()
 	{
-		
+		if(head != null)
+		{
+			head = head.link;
+		}
+		else
+		{
+			System.out.println("Nothing to delete");
+		}
+	}
+	
+	public boolean contain(String item)
+	{
+		return (find(item) != null ? true : false);
+	}
+	
+	public GeNode<String> find(String item)
+	{
+		while(head != null)
+		{
+			if(head.item.equals(item))
+			{
+				return head;
+			}
+			head = head.link;
+		}
+		return null;
+	}
+	
+	public void outPutList()
+	{
+		GeNode<String> position = head;
+		while(position != null)
+		{
+			System.out.println(" " + position.item + " " + position.link);
+			position = position.link;
+		}
 	}
 }
