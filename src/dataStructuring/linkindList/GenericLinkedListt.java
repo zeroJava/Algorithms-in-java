@@ -22,6 +22,10 @@ public class GenericLinkedListt<T> {
 		/* the outer class has access to all the variables and constructor of the inner class, even though 
 		 * the access type is private. This because the outer class to everything */
 		
+		public String toString()
+		{
+			return item + " " + link;
+		}
 	}// end of inner class
 	
 	public void addToList(String item)
@@ -64,7 +68,7 @@ public class GenericLinkedListt<T> {
 		GeNode<String> position = head;
 		while(position != null)
 		{
-			System.out.println(" " + position.item + " " + position.link);
+			System.out.println(position.item + " " + position.link);
 			position = position.link;
 		}
 	}
