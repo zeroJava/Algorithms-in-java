@@ -22,7 +22,7 @@ public class DtaStruct {
 
 	public void removeCertainData()
 	{
-		List<Integer> tempList = new ArrayList<Integer>();
+		//List<Integer> tempList = new ArrayList<Integer>();
 		showAllData();
 		int i = 0;
 		while (i < makeExistingData.size())

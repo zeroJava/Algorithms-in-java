@@ -4,6 +4,7 @@ public class GenericLinkedListt<T> {
 	
 	private GeNode<String> head;
 	
+	@SuppressWarnings("hiding")
 	private class GeNode<T>
 	{
 		private T item;
