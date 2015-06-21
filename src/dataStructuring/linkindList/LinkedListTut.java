@@ -9,9 +9,9 @@ public class LinkedListTut {
 		head = null;
 	}
 	
-	public void add(int count, String item)
+	public void add(String item)
 	{
-		head = new Nodee(count, item, head);
+		head = new Nodee(item, head);
 		/* by doing this, we are overriding head with a new value, but we are also backing up the previous value
 		 * of head in the nodee(head) argument as links 
 		 
@@ -100,9 +100,9 @@ public class LinkedListTut {
 	{
 		LinkedListTut linkeddListtt = new LinkedListTut();
 		System.out.println(linkeddListtt.isListEmpty());
-		linkeddListtt.add(45, "Apples");
-		linkeddListtt.add(75, "Tree");
-		linkeddListtt.add(25, "Cat");
+		linkeddListtt.add("Apples");
+		linkeddListtt.add("Tree");
+		linkeddListtt.add("Cat");
 		linkeddListtt.outPutList();
 		System.out.println(linkeddListtt.contains("Apples"));
 		System.out.println(linkeddListtt.isListEmpty());

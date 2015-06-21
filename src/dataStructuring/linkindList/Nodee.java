@@ -13,7 +13,7 @@ public class Nodee {
 		setLink(null);
 	}
 	
-	public Nodee(int count, String item, Nodee link)
+	public Nodee(String item, Nodee link)
 	{
 		setCount(count);
 		setItem(item);
