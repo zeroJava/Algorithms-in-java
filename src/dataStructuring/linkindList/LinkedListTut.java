@@ -2,6 +2,11 @@ package dataStructuring.linkindList;
 
 public class LinkedListTut {
 	
+	/* A linked list is linear data structure consisting of nodes(item), each node being connected to the 
+	   previous node by a link, hence the name LinkedList */
+	
+	/* Each new node created, contains a link, which is a copy/direction to the previous node */
+	
 	private Nodee head;
 	
 	public LinkedListTut()
@@ -13,12 +18,12 @@ public class LinkedListTut {
 	{
 		head = new Nodee(item, head);
 		/* by doing this, we are overriding head with a new value, but we are also backing up the previous value
-		 * of head in the nodee(head) argument as links 
+		   of head in the nodee(head) argument as links */ 
 		 
-		 * basically when linked list comes into exists(executed), it comes with an empty node(head), and decides
-		 * there needs to be more nodes So using the addStart power, it creates another node, and saves(backs up) 
-		 * the previous node(data), by creating a link(kind of DNA), which when harnessed(getLink) takes you to 
-		 * the previous node */
+		/* basically when linked list comes into exists(executed), it comes with an empty node(head), and decides
+		   there needs to be more nodes So using the addStart power, it creates another node, and saves(backs up) 
+		   the previous node(data) by creating a link(kind of DNA), which when harnessed(getLink) takes you to 
+		   the previous node */
 	}
 	
 	public void deleteItemFromList()
@@ -96,6 +101,20 @@ public class LinkedListTut {
 		}
 	}
 	
+	/* With linkedList, data will be displayed in the reverse order to how item(node) were inserted
+	   e.g. add(apple); add(pine); add(pineapple); add(lychee); add(cake); add(house)
+	   will display(output) as print: house, cake, lychee, pineapple, pine, apple */
+	
+	public void outPutListLinear()
+	{
+		Nodee position = head;
+		while(position != null)
+		{
+			System.out.println(position.getItem());
+			position = position.getLink();
+		}
+	}
+	
 	public static void main(String[] args)
 	{
 		LinkedListTut linkeddListtt = new LinkedListTut();
@@ -103,7 +122,7 @@ public class LinkedListTut {
 		linkeddListtt.add("Apples");
 		linkeddListtt.add("Tree");
 		linkeddListtt.add("Cat");
-		linkeddListtt.outPutList();
+		linkeddListtt.outPutListLinear();
 		System.out.println(linkeddListtt.contains("Apples"));
 		System.out.println(linkeddListtt.isListEmpty());
 		linkeddListtt.clear();
