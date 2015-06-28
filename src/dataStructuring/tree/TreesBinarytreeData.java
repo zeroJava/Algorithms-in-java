@@ -45,10 +45,32 @@ public class TreesBinarytreeData {
 	{
 		if(subRoot == null)
 		{
+			/* if no node exist, then we make one */
 			return root = new Node(item, null, null);
 		}
 		else if(item < subRoot.item)
 		{
+			/* when a node comes into existence, it only has the data(int value), but it doesn't have a subtrees.
+			   So we make one, what we are really doing is making an object which will be the value of 
+			   subRoot.leftsubtree */
+			
+			/* when the insert method is executed in the add(5, root) method, the program comes to this section
+			   of the if-else, here we forces it to do a recursion(re-run insert method inside the insert method)
+			   with the same item value, but with different sub-root argument, which is leftSubtree variable of the
+			   previous node(root). 
+			   Now forcing it to run again makes it run through the branching mechanism again, and this the first 
+			   section(if section) is executed returning a new node for the left subtree section for the 
+			   previous node */
+			
+			/* reusing the insertIntoSubtree, with the leftSubtree variable of the previous node, means we create
+			   a another "root node" within a another pocket dimension which turns out to be house in the 
+			   previous nodes leftSubtree variable(pocket-verse). 
+			   The leftSubtree variable pocket-verse spits out the "root node" of that dimension, only to become the
+			   sub node of the main tree (main universe) */
+			
+			/* Now subRoot.leftSubtree value is new node which is positioned in the left section of the previous
+			   node */
+			
 			subRoot.leftSubtree = inserIntoSubtree(item, subRoot.leftSubtree);
 			return subRoot;
 		}
@@ -119,6 +141,7 @@ public class TreesBinarytreeData {
 
 		System.out.println("In sorted order:");
 		tree.outPut();
+		input.close();
 	}
 
 }
