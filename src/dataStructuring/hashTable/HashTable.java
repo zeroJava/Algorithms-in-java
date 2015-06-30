@@ -13,7 +13,7 @@ public class HashTable {
 	/* List and set tend to associate with item(data) the value it holds, in other words the value becomes the 
 	   items ID e.g. an item with the value apple will have the ID apple, and item pear will have the ID pear */
 	
-	/* HashTable doesn't follow the same rule as list and set, instead it the hashTable tends to associate
+	/* HashTable doesn't follow the same rule as list and set, instead the hashTable tends to associate
 	   its item with a hash function, in other words is gives each item an ID(hash function) e.g.
 	   the item apple is given an ID, which is associates with rather than the value, so item apple with the 
 	   value apple is given the value apple, and ID 1001. */
