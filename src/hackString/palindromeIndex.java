@@ -8,7 +8,7 @@ public class palindromeIndex {
 	{
 		char[] letterOfString = value.toCharArray();
 		
-		for(int index = 0; index < letterOfString.length; index++)
+		for(int index = 0; index <= (letterOfString.length / 2); index++)
 		{
 			int dataForsecond = index + 1;// variable to used as a component for second index
 			int secondIndex = letterOfString.length - dataForsecond;// second index
