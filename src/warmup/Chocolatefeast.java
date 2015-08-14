@@ -9,7 +9,7 @@ public class Chocolatefeast {
 		Scanner in = new Scanner(System.in);
 		System.out.println("Enter number of testcases");
 		int test = in.nextInt();
-		System.out.println("exter funds, chocolate price and threshold for free chcocolate");
+		System.out.println("enter funds, chocolate price and threshold for free chcocolate");
 		for (int i = 0; i < test; i++)
 		{
 			System.out.println(Solve(in.nextInt(), in.nextInt(), in.nextInt()));
@@ -17,35 +17,26 @@ public class Chocolatefeast {
 		in.close();
 	}
 
-	private static long Solve(int n, int c, int m)
+	private static int Solve(int currentBalance, int costOfOne, int threstHold)
 	{
-		long chocolate = 0;
-		int wrapper = 0;
-		int moneyLeft = n;
-		int wrapperLeft = 0;
-
-		// buying the chocolate, and seeing how much chocolate & wrappers the individual gets  
-		while (c <= moneyLeft)
+		int chocolate = 0;
+		
+		chocolate = currentBalance / costOfOne;
+		System.out.println(chocolate);
+		
+		if(chocolate == 0)
+		{
+			return chocolate;
+		}
+		
+		int wrapper = chocolate; 
+		while(wrapper >= threstHold )
 		{
 			chocolate++;
+			wrapper = wrapper - threstHold;
 			wrapper++;
-			moneyLeft = moneyLeft - c;
 		}
-
-		// check how much wrappers he needs to get an extra chocolate 
-		while (wrapper >= m)
-		{
-			chocolate++;
-			wrapper = wrapper - m;
-			wrapperLeft = wrapper;
-		}
-
-		// trades in remaining wrapper for chocolate
-		if (wrapperLeft > 0)
-		{
-			chocolate++;
-		}
-
+				
 		return chocolate;
 	}
 
