@@ -5,19 +5,19 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Random;
 import java.util.Set;
 
 public class LexicograhicallyGreat {
 
 	public static void main(String[] args)
 	{
-		biggerIsGreater("dkhc");
+		
+		biggerIsGreater("hefrtghbrtghn");
 	}
 
 	public static void biggerIsGreater(String string)
 	{
-		Random random = new Random();
+		//Random random = new Random();
 		char[] letters = string.toCharArray();
 		
 		if(letters.length <= 1)
@@ -27,29 +27,7 @@ public class LexicograhicallyGreat {
 		}
 		
 		Set<String> set = new HashSet<String>();
-		set.add(string);
-		for(int iter = 0; iter < 100000; iter++)
-		{
-			
-			int firstIndex = random.nextInt(letters.length);
-			int secondIndex = random.nextInt(letters.length);
-			
-			if( !(firstIndex == secondIndex) )
-			{
-				char value1 = letters[firstIndex];
-				char value2 = letters[secondIndex];
-				letters[firstIndex] = value2;
-				letters[secondIndex] = value1;
-				String word = new String(letters);
-				
-				if(string.compareTo(word) < 0)
-				{
-					//System.out.println(word);
-					set.add(word);
-					//break;
-				}
-			}
-		}
+		allCombinations(set, "", string);
 		
 		if(set.size() <= 1)
 		{
@@ -62,9 +40,11 @@ public class LexicograhicallyGreat {
 		{
 			list.add(str);
 		}
+		
 		sorted(list);
-		System.out.println(list);
+		//System.out.println(list.size() + "" + list);
 		String[] array = listToArray(list);
+		
 		for(int index = 0; index < array.length; index++)
 		{
 			if(array[index].equals(string))
@@ -100,5 +80,24 @@ public class LexicograhicallyGreat {
 			array[index] = list.get(index);
 		}
 		return array;
+	}
+	
+	public static void allCombinations(Set<String> set, String prefix, String string)
+	{
+		int length = string.length();
+		
+		if(length == 0)
+		{
+			set.add(prefix);
+			//System.out.println(prefix);
+		}
+		else
+		{
+			for(int index = 0; index < length; index++)
+			{
+				allCombinations(set, prefix + string.charAt(index)
+						, string.substring(0, index) + string.substring(index + 1, length));
+			}
+		}
 	}
 }
