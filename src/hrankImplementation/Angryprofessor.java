@@ -1,4 +1,4 @@
-package hrankWarmup;
+package hrankImplementation;
 
 import java.util.Scanner;
 
