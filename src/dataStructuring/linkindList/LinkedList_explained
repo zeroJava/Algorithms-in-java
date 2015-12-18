@@ -2,4 +2,33 @@
  
  /* ----------------------------------------- | What is a LinkedList | ------------------------------------------------ */
  
+ A linked-list is a linear data structure consisting of nodes(items), each connected to the previous node via a link,
+ hence the name linked-list. So like a train, where each carriage is pointing to the previous carriage as it power source.
+ 
+ :note:
+ Java already has a linked-list class, which is a part is part of the list interface, like an array-list. Here we just talking 
+ about the theory of how it works. 
+ 
+ < -------------------------------------------- | Linked list as whole | -------------------------------------------->
+ 
+ |-------------|									|-------------|									   |-------------|
+ | Node 1      |									| Node 2	  |									   | Node 3		 |
+ |-------------|  <---- points back to (link) ----  |-------------|  <---- points back to (link) ----  |-------------|
+ |             |									|			  |                                    |			 |
+ | apple	   |									| banana	  |                                    | peach		 |
+ |-------------|									|-------------|                                    |-------------|
+ 
+ 
+ /* -------------------------------------------- | What is a node | --------------------------------------------------- */
+ 
+ So a linked-list is made out of nodes, so here we get an idea that our node will place were our data is held.
+ With this outlook, we can say that node is our capsule that will hold our data(item).
+ 
+ Back the train analogy, so our a train as a whole is our linked-list, and the individual carriages are our nodes.
+ 
+ 
+ /* ------------------------------------------------ | What is a link | ------------------------------------------------ */
+ 
+ Each new node created, contains a link, which is a copy/direction to the previous node.
+
  
