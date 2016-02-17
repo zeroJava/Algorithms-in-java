@@ -42,3 +42,9 @@ Network Trash Folder
 Temporary Items
 .apdisk
 /bin/
+
+# Ingore intellij files
+.idea
+.project
+ExercisesJava.iml
+.classpath
