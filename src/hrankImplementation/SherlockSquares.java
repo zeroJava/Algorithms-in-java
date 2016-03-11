@@ -22,7 +22,7 @@ public class SherlockSquares {
 
 	public static int rtSquared(int numA, int numB)
 	{
-		int number = (int) Math.sqrt(numA) - (int) Math.sqrt(numB);
-		return Math.abs(number);
+		int number = (int)Math.floor(Math.sqrt(numB)+ 1) - (int)Math.ceil(Math.sqrt(numA));
+		return number;
 	}
 }
